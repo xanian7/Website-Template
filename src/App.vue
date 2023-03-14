@@ -1,20 +1,26 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import LeftNav from './components/LeftNav.vue';
 </script>
 
-<template>
-  <LeftNav></LeftNav>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-  </header>
-
+<template id="app">
+  <div>
+    <div>
+      <LeftNav>Hello</LeftNav>
+    </div>
+    <div>
+      <header>
+        <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+      </header></div>
+    </div>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+}
+
+.wrapper {
+  size: 100%
 }
 
 .logo {
