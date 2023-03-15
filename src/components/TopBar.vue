@@ -1,52 +1,36 @@
 <template>
-	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
-		<div v-if="is_expanded" class="sidebar-backdrop"></div>
-		<div class="menu-toggle-wrap">
-			<button class="menu-toggle" @click.stop="ToggleMenu">
-				<span class="material-icons">-</span>
-			</button>
-		</div>
-		<div class="flex"></div>
+    <div v-if="is_expanded" class="sidebar-backdrop"></div>
+	<aside>
 	</aside>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
-
-const ToggleMenu = () => {
-	is_expanded.value = !is_expanded.value
-	localStorage.setItem("is_expanded", is_expanded.value)
-}
 </script>
 
 <style lang="scss" scoped>
 aside {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	background-color:rgb(37, 189, 138);
 	color:aquamarine;
-	width: calc(2rem + 32px);
+	height: calc(2rem + 32px);
 	overflow: hidden;
-	min-height: 100vh;
+	min-width: 100vw;
 	padding: 1rem;
-	transition: 0.2s ease-in-out;
     left: 0;
     top: 0;
     position: fixed;
-	z-index: 999;
 	.flex {
 		flex: 1 1 0%;
 	}
+
     .sidebar-backdrop {
         background-color: rgba(0,0,0,.5);
         width: 100vw;
         height: 100vh;
         position: fixed;
         top: 0;
-        right: 0;
-        cursor: pointer;
+        left: 0;
     }
 	.logo {
 		margin-bottom: 1rem;
@@ -73,9 +57,5 @@ aside {
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 	}
-	&.is-expanded {
-		width: 300px;
-		background-color: rgb(0, 0, 0);
-		}
 }
 </style>

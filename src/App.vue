@@ -1,17 +1,25 @@
 <script setup>
 import LeftNav from './components/LeftNav.vue';
+import Home from './components/Home.vue';
+import TheWelcome from './components/TheWelcome.vue';
+import HelloWorld from './components/HelloWorld.vue';
+import TopBar from './components/TopBar.vue';
 </script>
 
-<template id="app">
-  <div>
-    <div>
-      <LeftNav>Hello</LeftNav>
+<template>
+  <LeftNav />
+  <TopBar />
+  <header>
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
     </div>
-    <div>
-      <header>
-        <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-      </header></div>
-    </div>
+  </header>
+
+  <main>
+    <TheWelcome />
+  </main>
 </template>
 
 <style scoped>
