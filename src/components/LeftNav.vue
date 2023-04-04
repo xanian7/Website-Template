@@ -1,13 +1,15 @@
 <template>
-	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
-		<div v-if="is_expanded" class="sidebar-backdrop"></div>
+	<div v-if="is_expanded" class="sidebar-backdrop"></div>
+	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="menu-toggle-wrap">
-			<button class="menu-toggle" @click.stop="ToggleMenu">
-				<span class="material-icons">-</span>
-			</button>
+			<div class="button-position">
+			<v-btn icon @click.stop="ToggleMenu">
+				<img src="./assets/logo.svg">
+			</v-btn>
+			</div>
 		</div>
 		<div class="flex"></div>
-	</aside>
+	</div>
 </template>
 
 <script setup>
@@ -22,7 +24,23 @@ const ToggleMenu = () => {
 </script>
 
 <style lang="scss" scoped>
-aside {
+
+.sidebar-backdrop {
+        background-color: rgba(0,0,0,.5);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+		z-index: 998;
+    }
+	.button-position {
+		bottom: 0;
+		position: fixed;
+		margin-bottom: 2rem;
+	}
+.menu-wrap {
 	display: flex;
 	flex-direction: column;
 	background-color:rgb(37, 189, 138);
@@ -39,15 +57,6 @@ aside {
 	.flex {
 		flex: 1 1 0%;
 	}
-    .sidebar-backdrop {
-        background-color: rgba(0,0,0,.5);
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        cursor: pointer;
-    }
 	.logo {
 		margin-bottom: 1rem;
 		img {
@@ -75,7 +84,7 @@ aside {
 	}
 	&.is-expanded {
 		width: 300px;
-		background-color: rgb(0, 0, 0);
+		
 		}
 }
 </style>
