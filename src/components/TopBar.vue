@@ -1,6 +1,7 @@
 <template>
     <div v-if="is_expanded" class="sidebar-backdrop"></div>
 	<aside>
+	TESTING TITLE
 	</aside>
 </template>
 
@@ -20,6 +21,7 @@ aside {
     left: 0;
     top: 0;
     position: fixed;
+	z-index: 997;
 	.flex {
 		flex: 1 1 0%;
 	}

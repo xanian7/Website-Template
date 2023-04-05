@@ -3,9 +3,9 @@
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
-			<v-btn icon @click.stop="ToggleMenu">
-				<img src="./assets/logo.svg">
-			</v-btn>
+				<v-btn class="button-flip" @click.stop="ToggleMenu">
+					<mdicon :name="`${is_expanded ? 'chevron-double-left' : 'chevron-double-right'}`"></mdicon>
+				</v-btn>
 			</div>
 		</div>
 		<div class="flex"></div>
@@ -24,7 +24,6 @@ const ToggleMenu = () => {
 </script>
 
 <style lang="scss" scoped>
-
 .sidebar-backdrop {
         background-color: rgba(0,0,0,.5);
         width: 100vw;
@@ -53,7 +52,7 @@ const ToggleMenu = () => {
     left: 0;
     top: 0;
     position: fixed;
-	z-index: 999;
+	z-index: 998;
 	.flex {
 		flex: 1 1 0%;
 	}
@@ -84,7 +83,7 @@ const ToggleMenu = () => {
 	}
 	&.is-expanded {
 		width: 300px;
-		
-		}
+		z-index: 999;
+	}
 }
 </style>
