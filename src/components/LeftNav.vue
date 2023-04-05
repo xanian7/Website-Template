@@ -1,6 +1,9 @@
 <template>
-	<div v-if="is_expanded" class="sidebar-backdrop"></div>
+	<div v-if="is_expanded" class="backdrop"></div>
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
+		<div>
+			<mdicon name="account" :size="30"></mdicon>
+		</div>
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
 				<v-btn class="button-flip" @click.stop="ToggleMenu">
@@ -24,7 +27,7 @@ const ToggleMenu = () => {
 </script>
 
 <style lang="scss" scoped>
-.sidebar-backdrop {
+.backdrop {
         background-color: rgba(0,0,0,.5);
         width: 100vw;
         height: 100vh;
