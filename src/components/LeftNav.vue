@@ -1,19 +1,33 @@
 <template>
 	<div v-if="is_expanded" class="backdrop"></div>
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
-		<div>
-			<mdicon name="account" :size="30"></mdicon>
+		<div v-if="is_expanded">
+			<v-btn 
+          prepend-icon="mdi-export-variant"
+          variant="flat"
+        >
+          Share
+			</v-btn>
+		</div>
+		<div v-else>
+			<v-btn 
+          icon="mdi-export-variant"
+          variant="text"
+        >
+			</v-btn>
+			<div class="description">Account</div>
 		</div>
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
-				<v-btn icon class="button-flip" @click.stop="ToggleMenu">
-					<v-icon>
-						<mdicon :name="`${is_expanded ? 'chevron-double-left' : 'chevron-double-right'}`"></mdicon>
+				<v-btn icon
+        		variant="text" 
+				@click.stop="ToggleMenu"
+				>
+					<v-icon :icon="`${is_expanded ? 'mdi-chevron-left' : 'mdi-chevron-right'}`">
 					</v-icon>
 				</v-btn>
 			</div>
 		</div>
-		<div class="flex"></div>
 	</div>
 </template>
 
@@ -43,7 +57,14 @@ const ToggleMenu = () => {
 	.button-position {
 		bottom: 0;
 		position: fixed;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
+		
+	}
+	.description {
+		margin-top: 5%;
+		margin-left: 1rem;
+		display: inline-block;
+		position:absolute;
 	}
 .menu-wrap {
 	display: flex;
@@ -53,39 +74,20 @@ const ToggleMenu = () => {
 	width: calc(2rem + 32px);
 	overflow: hidden;
 	min-height: 100vh;
-	padding: 1rem;
-	transition: 0.2s ease-in-out;
+	padding: 0.5rem;
+	transition: 0.25s ease-in-out;
     left: 0;
     top: 0;
     position: fixed;
 	z-index: 998;
-	.flex {
-		flex: 1 1 0%;
-	}
-	.logo {
-		margin-bottom: 1rem;
-		img {
-			width: 2rem;
-		}
-	}
 	.menu-toggle-wrap {
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 1rem;
 		position: relative;
 		top: 0;
-		transition: 1s ease-out;
+		left:0;
         z-index: 999;
-	}
-	h3, .button .text {
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}
-	h3 {
-		color: var(--grey);
-		font-size: 0.875rem;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
 	}
 	&.is-expanded {
 		width: 300px;
