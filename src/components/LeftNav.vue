@@ -6,8 +6,10 @@
 		</div>
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
-				<v-btn class="button-flip" @click.stop="ToggleMenu">
-					<mdicon :name="`${is_expanded ? 'chevron-double-left' : 'chevron-double-right'}`"></mdicon>
+				<v-btn icon class="button-flip" @click.stop="ToggleMenu">
+					<v-icon>
+						<mdicon :name="`${is_expanded ? 'chevron-double-left' : 'chevron-double-right'}`"></mdicon>
+					</v-icon>
 				</v-btn>
 			</div>
 		</div>
@@ -27,6 +29,7 @@ const ToggleMenu = () => {
 </script>
 
 <style lang="scss" scoped>
+
 .backdrop {
         background-color: rgba(0,0,0,.5);
         width: 100vw;
