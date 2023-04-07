@@ -1,21 +1,35 @@
 <template>
 	<div v-if="is_expanded" class="backdrop"></div>
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
-		<div v-if="is_expanded">
+		<div >
 			<v-btn 
-          prepend-icon="mdi-export-variant"
-          variant="flat"
+          icon="mdi-account"
+          :variant="`${is_expanded ? 'outlined' : 'text'}`"
+		  block
+		  rounded="0"
+		  size="x-large"
         >
-          Share
 			</v-btn>
 		</div>
-		<div v-else>
+		<div >
 			<v-btn 
-          icon="mdi-export-variant"
-          variant="text"
+          icon="mdi-home"
+          :variant="`${is_expanded ? 'outlined' : 'text'}`"
+		  block
+		  rounded="0"
+		  size="x-large"
         >
 			</v-btn>
-			<div class="description">Account</div>
+		</div>
+		<div >
+			<v-btn 
+          icon="mdi-export-variant"
+          :variant="`${is_expanded ? 'outlined' : 'text'}`"
+		  block
+		  rounded="0"
+		  size="x-large"
+        >
+			</v-btn>
 		</div>
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
@@ -74,7 +88,7 @@ const ToggleMenu = () => {
 	width: calc(2rem + 32px);
 	overflow: hidden;
 	min-height: 100vh;
-	padding: 0.5rem;
+	padding: 0;
 	transition: 0.25s ease-in-out;
     left: 0;
     top: 0;

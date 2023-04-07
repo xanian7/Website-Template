@@ -13,7 +13,7 @@
 aside {
 	display: flex;
 	flex-direction: row;
-	background-color:rgb(37, 189, 138);
+	background-color:rgb(9, 112, 78);
 	color:aquamarine;
 	height: calc(2rem + 32px);
 	overflow: hidden;
