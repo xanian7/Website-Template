@@ -1,8 +1,10 @@
 <template>
     <div v-if="is_expanded" class="sidebar-backdrop"></div>
-	<aside>
-	TESTING TITLE
-	</aside>
+	<div class="top-bar-wrap">
+		<div class="title">
+			TITLE
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -10,7 +12,7 @@
 </script>
 
 <style lang="scss" scoped>
-aside {
+.top-bar-wrap {
 	display: flex;
 	flex-direction: row;
 	background-color:rgb(9, 112, 78);
@@ -23,42 +25,8 @@ aside {
     top: 0;
     position: fixed;
 	z-index: 997;
-	.flex {
-		flex: 1 1 0%;
-	}
-
-    .sidebar-backdrop {
-        background-color: rgba(0,0,0,.5);
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-	.logo {
-		margin-bottom: 1rem;
-		img {
-			width: 2rem;
-		}
-	}
-	.menu-toggle-wrap {
-		display: flex;
-		justify-content: flex-end;
-		margin-bottom: 1rem;
-		position: relative;
-		top: 0;
-		transition: 1s ease-out;
-        z-index: 999;
-	}
-	h3, .button .text {
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}
-	h3 {
-		color: var(--grey);
-		font-size: 0.875rem;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
-	}
+}
+.title { 
+  	margin: 0 auto; 
 }
 </style>

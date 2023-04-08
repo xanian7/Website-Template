@@ -3,37 +3,43 @@
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
 		<div >
 			<v-btn 
-          icon="mdi-account"
-          :variant="`${is_expanded ? 'outlined' : 'text'}`"
-		  block
-		  rounded="0"
-		  size="x-large"
-        >
+          	icon="mdi-account"
+          	variant="text"
+		  	block
+		  	rounded="0"
+		  	size="x-large"
+        	>
 			</v-btn>
 		</div>
+		<v-divider class="border-opacity-50"></v-divider>
 		<div >
 			<v-btn 
-          icon="mdi-home"
-          :variant="`${is_expanded ? 'outlined' : 'text'}`"
-		  block
-		  rounded="0"
-		  size="x-large"
-        >
+          	icon="mdi-home"
+          	variant="text"
+		  	block
+		  	rounded="0"
+		  	size="x-large"
+        	>
 			</v-btn>
 		</div>
+		<v-divider class="border-opacity-50"></v-divider>
 		<div >
 			<v-btn 
-          icon="mdi-export-variant"
-          :variant="`${is_expanded ? 'outlined' : 'text'}`"
-		  block
-		  rounded="0"
-		  size="x-large"
-        >
+          	icon="mdi-export-variant"
+          	variant="text"
+		  	block
+		  	rounded="0"
+		  	size="x-large"
+        	>
 			</v-btn>
 		</div>
+		<v-divider class="border-opacity-50"></v-divider>
 		<div class="menu-toggle-wrap">
 			<div class="button-position">
 				<v-btn icon
+				rounded="x-large" 
+				block
+				size="x-large"
         		variant="text" 
 				@click.stop="ToggleMenu"
 				>
@@ -71,14 +77,7 @@ const ToggleMenu = () => {
 	.button-position {
 		bottom: 0;
 		position: fixed;
-		margin-bottom: 1rem;
-		
-	}
-	.description {
-		margin-top: 5%;
-		margin-left: 1rem;
-		display: inline-block;
-		position:absolute;
+		margin-bottom: 1rem;	
 	}
 .menu-wrap {
 	display: flex;
