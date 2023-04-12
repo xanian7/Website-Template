@@ -1,9 +1,10 @@
 <template>
     <div v-if="is_expanded" class="sidebar-backdrop"></div>
 	<div class="top-bar-wrap">
-		<div class="title">
-			TITLE
-		</div>
+		<h1 class="title">
+			Xander's Test Site
+		</h1>
+
 	</div>
 </template>
 
@@ -15,9 +16,9 @@
 .top-bar-wrap {
 	display: flex;
 	flex-direction: row;
-	background-color:rgb(9, 112, 78);
-	color:aquamarine;
-	height: calc(2rem + 32px);
+	background-color:rgb(71, 71, 71);
+	color:rgb(168, 168, 168);
+	height: calc(3rem + 35px);
 	overflow: hidden;
 	min-width: 100vw;
 	padding: 1rem;
@@ -28,5 +29,9 @@
 }
 .title { 
   	margin: 0 auto; 
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
 }
 </style>

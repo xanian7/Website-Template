@@ -1,6 +1,10 @@
 <template>
 	<div v-if="is_expanded" class="backdrop"></div>
 	<div class="menu-wrap" :class="`${is_expanded ? 'is-expanded' : ''}`">
+		<header>
+			<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="50" height="50" />
+		</header>
+		<v-divider class="border-opacity-50"></v-divider>
 		<div >
 			<v-btn 
           	icon="mdi-account"
@@ -26,6 +30,17 @@
 		<div >
 			<v-btn 
           	icon="mdi-export-variant"
+          	variant="text"
+		  	block
+		  	rounded="0"
+		  	size="x-large"
+        	>
+			</v-btn>
+		</div>
+		<v-divider class="border-opacity-50"></v-divider>
+		<div >
+			<v-btn 
+          	icon="mdi-logout"
           	variant="text"
 		  	block
 		  	rounded="0"
@@ -79,11 +94,16 @@ const ToggleMenu = () => {
 		position: fixed;
 		margin-bottom: 1rem;	
 	}
+	.logo {
+  		display: block;
+  		margin: 0 auto 1rem;
+		  margin-top: 1rem;
+	}
 .menu-wrap {
 	display: flex;
 	flex-direction: column;
-	background-color:rgb(37, 189, 138);
-	color:aquamarine;
+	background-color:rgb(71, 71, 71);
+	color:rgb(168, 168, 168);
 	width: calc(2rem + 32px);
 	overflow: hidden;
 	min-height: 100vh;
