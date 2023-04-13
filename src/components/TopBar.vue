@@ -4,7 +4,9 @@
 		<h1 class="title">
 			Xander's Test Site
 		</h1>
-
+		<div>
+			<v-divider class="border-opacity-50"></v-divider>
+		</div>
 	</div>
 </template>
 
@@ -33,5 +35,12 @@
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.border { 
+	length:100%;
+	
+
 }
 </style>

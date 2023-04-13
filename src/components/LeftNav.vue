@@ -50,7 +50,7 @@
 		</div>
 		<v-divider class="border-opacity-50"></v-divider>
 		<div class="menu-toggle-wrap">
-			<div class="button-position">
+			<div dense class="button-position">
 				<v-btn icon
 				rounded="x-large" 
 				block
